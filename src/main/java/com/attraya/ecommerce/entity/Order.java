@@ -23,7 +23,6 @@ public class Order {
     private LocalDateTime dateCreated;
     @UpdateTimestamp
     private LocalDateTime lastUpdated;
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "billing_address_id", referencedColumnName = "id") // allows you to customize the foreign key column name and reference name of target entity
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "order") // "order" is the reference variable name of Order class // mappedBy define the One-to-One Bi-Directional Mapping
     private Address billingAddress;
 }

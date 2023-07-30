@@ -15,4 +15,7 @@ public class Address {
     private String state;
     private String country;
     private String zipCode;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "order_id", referencedColumnName = "id") // "id" is the primary key of Order entity
+    private Order order;
 }
