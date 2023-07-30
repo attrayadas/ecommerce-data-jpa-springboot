@@ -20,7 +20,7 @@ public class OneToManyMappingTest {
 
     // save order along with also save its order items
     @Test
-    void saveOrderMethod(){
+    void saveOrderMethod(){ // no update queries in One-to-many bidirectional mapping (better performance wise)
         Order order = new Order();
         order.setOrderTrackingNumber("100ABC");
         order.setStatus("IN PROGRESS");

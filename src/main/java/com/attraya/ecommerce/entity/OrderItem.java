@@ -18,4 +18,8 @@ public class OrderItem {
     @OneToOne
     @JoinColumn(name = "product_id")
     private Product product;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "order_id", referencedColumnName = "id") // One-to-many bidirectional works better because we don't see update queries to update the foreign keys
+    private Order order;
 }
